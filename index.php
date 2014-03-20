@@ -29,7 +29,7 @@ if((!$row)) {
 $value = $row['value'];
 $expdate = strtotime($row['ttd']);
     #check if they're expired
-    if ( ($expdate) and ($expdate < time()))
+    if ( ($expdate) and ($expdate < time()) and ($val > 0))
     {
         #these are expired so delete and replace with the new values
         $delete = mysql_query("DELETE FROM exchange_rate");
@@ -39,7 +39,6 @@ $expdate = strtotime($row['ttd']);
         $val = $value;
         $exp = date( 'Y-m-d H:i:s', $expdate);
     }
-
 }
     #convert to BTC representation
     $val = doubleval($val)/100000000;
