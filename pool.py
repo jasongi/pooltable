@@ -22,7 +22,7 @@ if response != 'error' and response != 'false' and response != False:
     f = urllib2.urlopen(req)
     response = f.read()
     f.close()
-#if transaction was moved correctly, set off the solanoid
+#if transaction was moved correctly, set off the solenoid
     if response == '*ok*':
         print response
         #run solanoid script
